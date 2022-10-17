@@ -5,7 +5,7 @@
   "title": "Bozerg Py Updates",
   "author": "Bozerg",
   "contact": "",
-  "homepage": "",
+  "homepage": "https://github.com/Bozerg/BozergPyUpdate",
   "description": "Update full py suite to support lazy bastard biter runs",
   "dependencies": [
     "pycoalprocessing >= 1.0.11",
