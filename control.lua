@@ -1,18 +1,13 @@
 local util = require("util")
 local crash_site = require("crash-site")
 
-itemsToAdd = {["transport-belt"] = 100, 
-				["burner-inserter"] = 20, 
-				["small-electric-pole"] = 150, 
-				["firearm-magazine"] = 200, 
-				["iron-plate"] = 100, 
-				["copper-plate"] = 50}
+itemsToAdd = {["transport-belt"] = 100,  
+				["firearm-magazine"] = 100}
 
 script.on_event(defines.events.on_player_created, function(event)
     local player = game.players[event.player_index]
 
     local character = player.character or player.cutscene_character
-
     if not character then
     	return
     end
@@ -37,8 +32,9 @@ script.on_event(defines.events.on_player_created, function(event)
             local player = game.players[event.player_index]
             local surface = player.surface
             local sps = surface.find_entities_filtered{position = player.force.get_spawn_position(surface), radius = 250, name = "crash-site-spaceship"} 
-            local position = sps[1].insert({name="automated-factory-mk01",count=1})
-            local position = sps[1].insert({name="assembling-machine-1",count=12})
+            local position = sps[1].insert({name="assembling-machine-1",count=10})
+            local position = sps[1].insert({name="burner-inserter",count=10})
+            local position = sps[1].insert({name="small-electric-pole",count=100})
         end
     end
 end)
@@ -48,9 +44,10 @@ script.on_event(defines.events.on_player_respawned, function(event)
 	util.insert_safe(player, {["firearm-magazine"] = 40})
 end)
 
-
 script.on_init(function()
     if remote.interfaces.freeplay then
-        remote.call("freeplay", "set_disable_crashsite", false)     -- That's the point of this mod... to have a crashsite, so we're force enabling it
+        remote.call("freeplay", "set_disable_crashsite", false)
     end
 end)
+
+

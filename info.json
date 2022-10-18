@@ -8,10 +8,14 @@
   "homepage": "https://github.com/Bozerg/BozergPyUpdate",
   "description": "Update full py suite to support lazy bastard biter runs",
   "dependencies": [
-    "pycoalprocessing >= 1.0.11",
-    "pyindustry >= 1.0.12",
-    "(?) rso-mod",
-    "~ pyraworesgraphics >= 1.0.0"
+    "pycoalprocessing >= 2.0.0",
+    "pyindustry >= 2.0.0",
+    "pyfusionenergy >= 2.0.0",
+    "pyrawores >= 2.4.0",
+    "pypetroleumhandling >= 2.0.0",
+    "pyhightech >= 2.0.0",
+    "pyalienlife >= 2.0.0",
+    "pypostprocessing >= 0.1.0"
   ],
   "package": {
     "ignore": [],
